@@ -97,7 +97,7 @@ fn main() {
 
 	p.finish()
 
-	mut selected_day := os.input(term.colorize(term.bright_white, "Day to predict tempurature (Format MM-DD or M-D, Ex. 01-13 or 1-13) (Default = tommorow): "))
+	mut selected_day := os.input(term.colorize(term.bright_white, "Day to predict temperature (Format MM-DD or M-D, Ex. 01-13 or 1-13) (Default = tommorow): "))
 	if selected_day == "" {
 		println(term.colorize(term.green, "Defaulting to tommorow..."))
 		selected_day = time.now().add_days(1).custom_format("MM-DD")
@@ -150,7 +150,7 @@ fn main() {
 	p.finish()
 
 	if term.can_show_color_on_stdout() {
-		println("\nPredicted tempurature: ${term.bright_green(ans[0])} ${rune(176)}F")
+		println("\nPredicted temperature: ${term.bright_green(ans[0])} ${rune(176)}F")
 		println("Predicted high: ${term.bright_green(ans[1])} ${rune(176)}F")
 		println("Predicted low: ${term.bright_green(ans[2])} ${rune(176)}F")
 
@@ -158,7 +158,7 @@ fn main() {
 
 
 	} else {
-		println("\nPredicted tempurature: ${ans[0]} ${rune(176)}F")
+		println("\nPredicted temperature: ${ans[0]} ${rune(176)}F")
 		println("Predicted high: ${ans[1]} ${rune(176)}F")
 		println("Predicted low: ${ans[2]} ${rune(176)}F")
 
