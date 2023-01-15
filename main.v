@@ -67,6 +67,7 @@ fn main() {
 	mut p := progressbar.Progressbar{}
 	p.new_with_format(term.colorize(term.bright_magenta, "Getting data"), 4, ["|", term.bg_white(" "), "|"])
 
+
 	url := "https://archive-api.open-meteo.com/v1/archive?latitude=${chosen_place.lat.f64():.2}&longitude=${chosen_place.lon.f64():.2}&start_date=1959-01-01&end_date=${time.now().custom_format("YYYY-MM-DD")}&daily=temperature_2m_max&timezone=auto&temperature_unit=fahrenheit&windspeed_unit=mph&precipitation_unit=inch&timeformat=unixtime"
 	min_url := "https://archive-api.open-meteo.com/v1/archive?latitude=${chosen_place.lat.f64():.2}&longitude=${chosen_place.lon.f64():.2}&start_date=1959-01-01&end_date=${time.now().custom_format("YYYY-MM-DD")}&daily=temperature_2m_min&timezone=auto&temperature_unit=fahrenheit&windspeed_unit=mph&precipitation_unit=inch&timeformat=unixtime"
 
@@ -87,7 +88,7 @@ fn main() {
 	mut min_encoded := json.decode(Temps, min_changed) or { panic(err) }
 	min_encoded.daily.time = min_encoded.daily.time[..min_encoded.daily.temperature_2m_min.len+1]
 	p.increment()
-	
+	 
 	r_rain := http.get(rain_url) or { panic(err) }
 	mut rain_changed := r_rain.body
 	rain_changed = rain_changed.replace(",null", "")
