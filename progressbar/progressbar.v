@@ -158,12 +158,12 @@ fn (p Progressbar) draw() {
 		int(f64(bar_piece_count) * x)
 	}
 
-	offset := difftime(p.start)
-	eta := if completed {
-		calc_time_components(offset)
-	} else {
-		calc_time_components(p.remaining_seconds())
-	}
+	// offset := difftime(p.start)
+	// eta := if completed {
+	// 	calc_time_components(offset)
+	// } else {
+	// 	calc_time_components(p.remaining_seconds())
+	// }
 
 	if label_width == 0 {
 		bar_width += 1
