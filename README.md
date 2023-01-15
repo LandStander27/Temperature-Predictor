@@ -4,7 +4,7 @@
 
 #### Installing
 - Download and run compiled binary from releases tab
-#### Building from source
+#### Building from source (recommended)
 - Install [VLang](https://vlang.io) and add to `PATH`
 - Download GCC from [here](https://winlibs.com/) and add bin to `PATH`
 - Clone repo using `git clone https://github.com/LandStander27/Temperature-Predictor.git`
