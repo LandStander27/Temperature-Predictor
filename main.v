@@ -151,6 +151,7 @@ fn main() {
 	p.finish()
 
 	if term.can_show_color_on_stdout() {
+		println("\nNote: ${term.bright_white('This is mostly not accurate, although it can most of the time get close')}")
 		println("\nPredicted temperature: ${term.bright_green(ans[0])} ${rune(176)}F")
 		println("Predicted high: ${term.bright_green(ans[1])} ${rune(176)}F")
 		println("Predicted low: ${term.bright_green(ans[2])} ${rune(176)}F")
@@ -159,6 +160,7 @@ fn main() {
 
 
 	} else {
+		println("\nNote: This is mostly not accurate, although it can most of the time get close")
 		println("\nPredicted temperature: ${ans[0]} ${rune(176)}F")
 		println("Predicted high: ${ans[1]} ${rune(176)}F")
 		println("Predicted low: ${ans[2]} ${rune(176)}F")
