@@ -1,0 +1,6 @@
+
+
+mkdir bin silent
+
+v predict.v -prod -cc tcc -o ".\bin\predictor.exe"
+echo Compiled
